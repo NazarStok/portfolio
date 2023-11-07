@@ -1,0 +1,846 @@
+@charset "UTF-8";
+/* SCSS Compiled */ /***************************************************              GENERAL RESET STYLES             ***************************************************/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  line-height: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  border-style: none;
+  max-width: 100%;
+}
+
+form fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+input, textarea, select {
+  vertical-align: middle;
+  color: #000;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+input::-webkit-input-placeholder {
+  color: #000;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: #000;
+}
+
+/*
+@media (min-width: 1921px){}
+@media (width: 1920px){}
+@media (min-width: 1440px) and (max-width: 1919px) {}
+@media (min-width: 1360px) and (max-width: 1439px) {}
+@media (min-width: 1280px) and (max-width: 1359px) {}
+@media (min-width: 1024px) and (max-width: 1279px) {}
+@media (min-width: 768px) and (max-width: 1023px) {}
+@media (min-width: 375px) and (max-width: 767px) {}
+@media (min-width: 320px) and (max-width: 374px) {}
+*/
+/*
+@media (max-width: 1919px) {}
+@media (max-width: 1439px) {}
+@media (max-width: 1279px) {}
+@media (max-width: 767px) {}
+*/
+/*usage  @include font-size(13);*/
+/* Brand Colors ------------------------------------------------*/
+#wrapper,
+main,
+#content,
+#sidebar,
+aside,
+section {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  height: auto;
+}
+
+.layout {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  height: auto;
+  width: 1370px;
+  margin: 0 auto;
+}
+
+main {
+  background-color: #0C0C0C;
+}
+
+h1 {
+  color: #FDC66B;
+  font-family: Nexa Bold;
+  font-size: 84px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  padding-top: 180px;
+}
+@media (max-width: 1100px) {
+  h1 {
+    font-size: 70px;
+  }
+}
+@media (max-width: 550px) {
+  h1 {
+    padding-top: 100px;
+  }
+}
+
+header {
+  padding: 70px 10px;
+  background-color: #0C0C0C;
+}
+header .heaver__nav {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+header .heaver__nav .nav__flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+header .heaver__nav .nav__flex .nav__li {
+  padding: 0 10px;
+  margin: 20px 8px;
+}
+header .heaver__nav .nav__flex .nav__li a {
+  color: #FFF;
+  font-family: Nexa-Bold;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+header .heaver__nav .nav__flex .nav__li a:hover {
+  color: #FDC66B;
+}
+
+footer {
+  background-color: #FDC66B;
+}
+footer .content {
+  max-width: 1370px;
+  margin: 0 auto;
+}
+footer .content h1 {
+  color: #0C0C0C;
+  padding: 90px 0 70px;
+}
+footer .content .flex_block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 120px;
+}
+@media (max-width: 1100px) {
+  footer .content .flex_block {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+footer .content .flex_block .contact_block {
+  color: #0C0C0C;
+  font-family: Nexa Bold;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+@media (max-width: 1100px) {
+  footer .content .flex_block .contact_block {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+footer .content .flex_block .contact_block .info_block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #0C0C0C;
+  font-family: Nexa Bold;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 35px 0 0;
+}
+@media (max-width: 1100px) {
+  footer .content .flex_block .contact_block .info_block {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+footer .content .flex_block .contact_block .info_block img {
+  margin: 0 25px 0 0;
+}
+footer .content .flex_block .contact_block .info_block p {
+  color: #0C0C0C;
+  font-family: Nexa Light;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+footer .content .flex_block .contact_block .info_block p a {
+  color: #0C0C0C;
+}
+footer .content .flex_block .contact_block .first {
+  margin-top: 55px;
+}
+footer .content .flex_block .email_block {
+  color: #0C0C0C;
+  font-family: Nexa Bold;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+@media (max-width: 1100px) {
+  footer .content .flex_block .email_block {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+footer .content .flex_block .email_block .sosials_href {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 35px;
+  color: #0C0C0C;
+  font-family: Nexa Bold;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+@media (max-width: 600px) {
+  footer .content .flex_block .email_block .sosials_href {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+footer .content .flex_block .email_block .sosials_href img {
+  height: 50px;
+  width: 50px;
+  margin: 0 25px 0 0;
+}
+footer .content .flex_block .email_block .sosials_href .first {
+  margin-top: 55px;
+}
+footer .content .flex_block .email_block .margin_p {
+  margin-top: 35px;
+}
+
+.content {
+  max-width: 1370px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.content .subheader {
+  margin-top: 130px;
+  color: #FFF;
+  font-family: Nexa Bold;
+  font-size: 160px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 0 10px;
+}
+@media (max-width: 1100px) {
+  .content .subheader {
+    font-size: 120px;
+  }
+}
+@media (max-width: 850px) {
+  .content .subheader {
+    font-size: 70px;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 550px) {
+  .content .subheader {
+    font-size: 45px;
+    margin-top: 0;
+  }
+}
+@media (max-width: 350px) {
+  .content .subheader {
+    font-size: 35px;
+  }
+}
+.content .subheader .subheader__flex_block {
+  margin-bottom: -60px;
+}
+@media (max-width: 850px) {
+  .content .subheader .subheader__flex_block {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 550px) {
+  .content .subheader .subheader__flex_block {
+    margin-bottom: 20px;
+  }
+}
+.content .subheader .subheader__flex_block .subheader__text-min {
+  color: #A7B1B1;
+  font-family: Nexa Bold;
+  font-size: 105px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+@media (max-width: 1100px) {
+  .content .subheader .subheader__flex_block .subheader__text-min {
+    font-size: 80px;
+  }
+}
+@media (max-width: 850px) {
+  .content .subheader .subheader__flex_block .subheader__text-min {
+    font-size: 50px;
+  }
+}
+@media (max-width: 550px) {
+  .content .subheader .subheader__flex_block .subheader__text-min {
+    font-size: 30px;
+  }
+}
+@media (max-width: 350px) {
+  .content .subheader .subheader__flex_block .subheader__text-min {
+    font-size: 25px;
+  }
+}
+.content .subheader .subheader__flex_block .subheader__text-point {
+  width: 20px; /* Задайте ширину крапки */
+  height: 20px; /* Задайте висоту крапки */
+  background-color: #FDC66B; /* Задайте колір крапки (в даному випадку чорний) */
+  display: inline-block; /* Задайте тип відображення, щоб елемент
+мав розміри ширини та висоти */
+}
+@media (max-width: 1100px) {
+  .content .subheader .subheader__flex_block .subheader__text-point {
+    width: 19px; /* Задайте ширину крапки */
+    height: 19px;
+  }
+}
+@media (max-width: 850px) {
+  .content .subheader .subheader__flex_block .subheader__text-point {
+    width: 15px; /* Задайте ширину крапки */
+    height: 15px;
+  }
+}
+@media (max-width: 550px) {
+  .content .subheader .subheader__flex_block .subheader__text-point {
+    width: 10px; /* Задайте ширину крапки */
+    height: 10px;
+  }
+}
+.content .subheader .telegram_href {
+  color: #0C0C0C;
+  font-family: Nexa Bold;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background: #FDC66B;
+  padding: 20px 30px;
+  margin-top: -20px;
+  transition: 0.8s;
+}
+.content .subheader .telegram_href:hover {
+  background-color: #FFFFFF;
+  transition: 0.8s;
+}
+.content .aboutme {
+  padding: 0 10px;
+}
+.content .aboutme .aboutme__content {
+  margin-top: 115px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (max-width: 1100px) {
+  .content .aboutme .aboutme__content {
+    justify-content: space-around;
+  }
+}
+.content .aboutme .aboutme__content .aboutme__content__photoblock {
+  margin-bottom: 20px;
+}
+.content .aboutme .aboutme__content .aboutme__content__photoblock .absolut__block {
+  border: 12px solid #FDC66B;
+  position: absolute;
+  width: 483px;
+  display: block;
+  height: 632px;
+  margin: 30px 0 0 30px;
+}
+@media (max-width: 550px) {
+  .content .aboutme .aboutme__content .aboutme__content__photoblock .absolut__block {
+    height: 370px;
+    width: 270px;
+  }
+}
+@media (max-width: 320px) {
+  .content .aboutme .aboutme__content .aboutme__content__photoblock .absolut__block {
+    display: none;
+  }
+}
+.content .aboutme .aboutme__content .aboutme__content__photoblock img {
+  margin: 0 30px 30px 0;
+  padding: 15px;
+  background-color: #A7B1B1;
+  position: relative;
+  width: 483px;
+  height: 632px;
+}
+@media (max-width: 550px) {
+  .content .aboutme .aboutme__content .aboutme__content__photoblock img {
+    height: 370px;
+    width: 270px;
+  }
+}
+.content .aboutme .aboutme__content .aboutme__content__textblock {
+  max-width: 720px;
+}
+@media (max-width: 1254px) {
+  .content .aboutme .aboutme__content .aboutme__content__textblock {
+    max-width: 600px;
+  }
+}
+@media (max-width: 1148px) {
+  .content .aboutme .aboutme__content .aboutme__content__textblock {
+    max-width: 550px;
+  }
+}
+.content .aboutme .aboutme__content .aboutme__content__textblock .textblock__myname {
+  color: #FFF;
+  font-family: Nexa Bold;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.content .aboutme .aboutme__content .aboutme__content__textblock .textblock__myname p {
+  display: inline-block;
+  color: #FDC66B;
+}
+.content .aboutme .aboutme__content .aboutme__content__textblock .textblock__aboutme {
+  margin-top: 20px;
+  color: #FFF;
+  text-align: justify;
+  font-family: Nexa Light;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.content .aboutme .aboutme__content .aboutme__content__textblock .aboutme__content_flex_block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (max-width: 550px) {
+  .content .aboutme .aboutme__content .aboutme__content__textblock .aboutme__content_flex_block {
+    justify-content: space-around;
+  }
+}
+.content .aboutme .aboutme__content .aboutme__content__textblock .aboutme__content_flex_block .content_flex_block1 {
+  color: #FDC66B;
+  font-family: Nexa Bold;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 40px;
+  text-align: center;
+}
+.content .aboutme .aboutme__content .aboutme__content__textblock .aboutme__content_flex_block .content_flex_block1 p {
+  color: #FFF;
+  text-align: center;
+  font-family: Nexa Light;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.content .aboutme .aboutme__content .aboutme__content__textblock .aboutme__content_flex_block .content_flex_block1 a {
+  color: #FFF;
+  text-align: center;
+  font-family: Nexa Light;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.content .aboutme .aboutme__content .aboutme__content__textblock .aboutme__content_flex_block .education_text {
+  margin-top: 70px;
+  text-align: center;
+  color: #FDC66B;
+  font-family: Nexa Bold;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.content .aboutme .aboutme__content .aboutme__content__textblock .aboutme__content_flex_block .education_text p {
+  color: #FFF;
+  text-align: center;
+  font-family: Nexa Light;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.content .skills {
+  padding: 0 10px;
+}
+.content .skills .skills_flexblock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (max-width: 1100px) {
+  .content .skills .skills_flexblock {
+    justify-content: space-around;
+  }
+}
+.content .skills .skills_flexblock .skills_leftside {
+  width: 510px;
+}
+.content .skills .skills_flexblock .skills_leftside .block1 .progressbar {
+  width: 100%;
+  height: 15px;
+  background-color: #494949;
+  position: relative;
+}
+.content .skills .skills_flexblock .skills_leftside .block1 .progressbar .progress {
+  height: 100%;
+  background-color: #FDC66B;
+  width: 90%; /* Встановіть відсоток заповнення тут, наприклад, 50% */
+}
+.content .skills .skills_flexblock .skills_leftside .block2 .progressbar {
+  width: 100%;
+  height: 15px;
+  background-color: #494949;
+  position: relative;
+}
+.content .skills .skills_flexblock .skills_leftside .block2 .progressbar .progress {
+  height: 100%;
+  background-color: #FDC66B;
+  width: 75%; /* Встановіть відсоток заповнення тут, наприклад, 50% */
+}
+.content .skills .skills_flexblock .skills_leftside .block3 .progressbar {
+  width: 100%;
+  height: 15px;
+  background-color: #494949;
+  position: relative;
+}
+.content .skills .skills_flexblock .skills_leftside .block3 .progressbar .progress {
+  height: 100%;
+  background-color: #FDC66B;
+  width: 85%; /* Встановіть відсоток заповнення тут, наприклад, 50% */
+}
+.content .skills .skills_flexblock .skills_leftside .block4 .progressbar {
+  width: 100%;
+  height: 15px;
+  background-color: #494949;
+  position: relative;
+}
+.content .skills .skills_flexblock .skills_leftside .block4 .progressbar .progress {
+  height: 100%;
+  background-color: #FDC66B;
+  width: 70%; /* Встановіть відсоток заповнення тут, наприклад, 50% */
+}
+.content .skills .skills_flexblock .skills_rightside {
+  width: 510px;
+}
+.content .skills .skills_flexblock .skills_rightside .block1 .progressbar {
+  width: 100%;
+  height: 15px;
+  background-color: #494949;
+  position: relative;
+}
+.content .skills .skills_flexblock .skills_rightside .block1 .progressbar .progress {
+  height: 100%;
+  background-color: #FDC66B;
+  width: 50%; /* Встановіть відсоток заповнення тут, наприклад, 50% */
+}
+.content .skills .skills_flexblock .skills_rightside .block2 .progressbar {
+  width: 100%;
+  height: 15px;
+  background-color: #494949;
+  position: relative;
+}
+.content .skills .skills_flexblock .skills_rightside .block2 .progressbar .progress {
+  height: 100%;
+  background-color: #FDC66B;
+  width: 70%; /* Встановіть відсоток заповнення тут, наприклад, 50% */
+}
+.content .skills .skills_flexblock .skills_rightside .block3 .progressbar {
+  width: 100%;
+  height: 15px;
+  background-color: #494949;
+  position: relative;
+}
+.content .skills .skills_flexblock .skills_rightside .block3 .progressbar .progress {
+  height: 100%;
+  background-color: #FDC66B;
+  width: 60%; /* Встановіть відсоток заповнення тут, наприклад, 50% */
+}
+.content .skills .skills_flexblock .skills_rightside .block4 .progressbar {
+  width: 100%;
+  height: 15px;
+  background-color: #494949;
+  position: relative;
+}
+.content .skills .skills_flexblock .skills_rightside .block4 .progressbar .progress {
+  height: 100%;
+  background-color: #FDC66B;
+  width: 65%; /* Встановіть відсоток заповнення тут, наприклад, 50% */
+}
+.content .skills .skills_flexblock .skills_text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #FFF;
+  font-family: Nexa Bold;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 80px 0 5px;
+}
+@media (max-width: 550px) {
+  .content .skills .skills_flexblock .skills_text {
+    margin: 30px 0 5px;
+  }
+}
+.content .skills .skills_flexblock .skills_text p {
+  color: #FFF;
+  font-family: Nexa Light;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin-top: 15px;
+}
+.content .skills .progressbar {
+  width: 100%;
+  height: 15px;
+  background-color: #494949;
+  position: relative;
+}
+.content .skills .progressbar .progress {
+  height: 100%;
+  background-color: #FDC66B;
+  width: 50%; /* Встановіть відсоток заповнення тут, наприклад, 50% */
+}
+.content .slider_box {
+  padding: 0 10px;
+}
+.content .slider_box .portfolio .categories {
+  margin: 80px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.content .slider_box .portfolio .categories .category-button {
+  margin: 5px 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #0C0C0C;
+  border: 0px;
+  color: #FFF;
+  font-family: Nexa Bold;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.content .slider_box .portfolio .categories .category-button:hover {
+  color: #FDC66B;
+}
+.content .slider_box .portfolio .category-content {
+  display: none;
+}
+.content .slider_box .portfolio .category-content.active {
+  display: block;
+}
+.content .slider_box .portfolio .works .flex_block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.content .slider_box .portfolio .works .flex_block .content_block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 12px solid #FFF;
+  margin-top: 15px;
+  width: 275px;
+  height: 275px;
+}
+.content .slider_box .portfolio .category-content .flex_block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.content .slider_box .portfolio .category-content .flex_block .content_block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 12px solid #FFF;
+  margin-top: 15px;
+  width: 275px;
+  height: 275px;
+  transition: 0.8s;
+}
+.content .slider_box .portfolio .category-content .flex_block .content_block:hover {
+  transition: 0.8s;
+  border: 12px solid #FDC66B;
+}
+.content .services {
+  padding: 0 10px;
+}
+.content .services .services_flex_block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+@media (max-width: 1140px) {
+  .content .services .services_flex_block {
+    justify-content: space-around;
+  }
+}
+.content .services .services_flex_block .content_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #FFF;
+  font-family: Nexa Bold;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  max-width: 420px;
+  margin-top: 130px;
+  text-align: center;
+}
+.content .services .services_flex_block .content_block img {
+  margin-bottom: 35px;
+}
+.content .services .services_flex_block .content_block p {
+  color: #FFF;
+  text-align: justify;
+  font-family: Nexa Light;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin-top: 24px;
+}
